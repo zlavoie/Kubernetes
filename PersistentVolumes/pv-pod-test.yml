@@ -1,0 +1,17 @@
+apiVersion: 1
+kind: Pod
+metadata:
+  name: pv-pod-test
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: busyBox
+    image: busybox:stable
+    command: ['sh', '-c', 'cat /data/data.txt']
+    volumeMounts:
+    - name: pv-host-data
+      mountPath: /data
+  volumes:
+  - name: pv-host-data
+    persistentVolumeClaim: 
+      claimName: hostpath-pvc
