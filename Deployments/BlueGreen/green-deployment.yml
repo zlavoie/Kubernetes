@@ -16,6 +16,6 @@ spec:
     spec:
       containers: 
       - name: nginx
-        image: linuzacademycontent/ckad-nginx:green
+        image: linuxacademycontent/ckad-nginx:green
         ports:
         - containerPort: 80
